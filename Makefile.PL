@@ -2,6 +2,14 @@ use ExtUtils::MakeMaker;
 
 ########################################################################
 
+BEGIN {
+	if ( $^O =~ m/Win32/ or $ENV{THIS_IS_WIN32} ) {
+	    die "Benchmark::Forking requires fork(), which is not supported on Windows.\n"
+	}
+}
+
+########################################################################
+
 WriteMakefile(
     'NAME'		=> 'Benchmark::Forking',
     'VERSION_FROM'	=> 'Forking.pm', 
@@ -28,10 +36,5 @@ cleanmanifest: realclean FORCE
 
 cover: FORCE
 	cover -delete; HARNESS_PERL_SWITCHES=-MDevel::Cover make test; cover
-
-docs : README
-
-README: Forking/ReadMe.pod
-	pod2text Forking/ReadMe.pod > README
 
 }; }

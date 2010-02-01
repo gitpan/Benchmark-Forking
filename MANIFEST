@@ -1,8 +1,7 @@
 Forking.pm
-Forking/ReadMe.pod
 Makefile.PL
 MANIFEST
+META.yml
 README
 t/basics.t
 t/example.pl
-META.yml                                 Module meta-data (added by MakeMaker)

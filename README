@@ -1,5 +1,5 @@
 NAME
-    Benchmark::Forking::ReadMe - About the forking benchmarks distribution
+    Benchmark::Forking - About the forking benchmarks distribution
 
 MOTIVATION
     The standard Benchmark module can sometimes report inaccurate or
@@ -11,7 +11,7 @@ MOTIVATION
     Data in global variables is an obvious source of side effects; in the
     below example, the grep takes longer as more items are pushed onto the
     array, so the test functions that run later will be reported by
-    Benchmark as being slower:
+    Benchmark as being slower, despite their code being identical:
 
       cmpthese( 1000, {
         "test_1" => sub { push @global, scalar grep 1, @global },
@@ -33,27 +33,16 @@ MOTIVATION
     correct conclusion that the three identical tests run at approximately
     the same speed.
 
-DISTRIBUTION
-    This is version 0.99 of Benchmark::Forking.
+VERSION
+    This is version 1.00 of Benchmark::Forking.
 
-    This release has been tested succesfully on the following platforms:
-    5.6.1 on darwin
+    Changes
 
-    This module is new and being distributed for the first time. An initial
-    discussion was held at the Perl Monks community
-    ("http://perlmonks.org/?node_id=388481").
+    2010−02−01: Updated documentation.
 
-    This module's CPAN registration should read:
+    2004−09−05: Expanded documentation and packaged for distribution.
 
-      Name            DSLIP  Description
-      --------------  -----  ---------------------------------------------
-      Benchmark::     Grp 3  Development Support
-      ::Forking       Rdphp  Run benchmarks in separate processes
-
-CHANGE HISTORY
-    First version written September 3.
-
-    Expanded documentation and packaged for distribution September 5.
+    2004−09−03: First version written.
 
 INSTALLATION
     This module should work with any version of Perl 5, without platform
@@ -62,24 +51,25 @@ INSTALLATION
     You should be able to install this module using the CPAN shell
     interface:
 
-      perl -MCPAN -e 'install Benchmark::Forking'
+      perl −MCPAN −e 'install Benchmark::Forking'
 
     Alternately, you may retrieve this package from CPAN
-    ("http://search.cpan.org/~evo/") or from the author's site
-    ("http://www.evoscript.org/Benchmark-Forking").
-
-    After downloading the distribution, follow the normal procedure to
+    ("http://search.cpan.org/~evo/") and follow the normal procedure to
     unpack and install it, using the commands shown below or their local
     equivalents on your system:
 
-      tar xzf Benchmark-Forking-*.tar.gz
-      cd Benchmark-Forking-*
+      tar xzf Benchmark−Forking−*.tar.gz
+      cd Benchmark−Forking−*
       perl Makefile.PL
       make test && sudo make install
 
 SUPPORT
-    If you have questions or feedback about this module, please feel free to
-    contact the author at the below address. Although there is no formal
+    Once installed, this module’s documentation is available as a manual
+    page via "perldoc Benchmark::Forking" or on CPAN sites such as
+    "http://search.cpan.org/dist/Benchmark−Forking".
+
+    If you have questions or feedback about this module, please feel free
+    to contact the author at the below address. Although there is no formal
     support program, I do attempt to answer email promptly.
 
     Bug reports that contain a failing test case are greatly appreciated,
@@ -87,35 +77,33 @@ SUPPORT
     future releases.
 
     To report bugs via the CPAN web tracking system, go to
-    "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Benchmark-Forking" or send
-    mail to "Dist=Benchmark-Forking#rt.cpan.org", replacing "#" with "@".
+    "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Benchmark−Forking" or send
+    mail to "Dist=Benchmark−Forking#rt.cpan.org", replacing "#" with "@".
 
-    If you've found this module useful or have feedback about your
+    If you’ve found this module useful or have feedback about your
     experience with it, consider sharing your opinion with other Perl users
-    by posting your comment to CPAN's ratings system
-    ("http://cpanratings.perl.org/rate/?distribution=Benchmark-Forking").
+    by posting your comment to CPAN’s ratings system
+    ("http://cpanratings.perl.org/rate/?distribution=Benchmark−Forking").
 
-    For more general discussion, you may wish to post a message on PerlMonks
-    ("http://perlmonks.org/?node=Seekers%20of%20Perl%20Wisdom") or on the
-    comp.lang.perl.misc newsgroup
-    ("http://groups.google.com/groups?group=comp.lang.perl.misc").
+    For more general discussion, you may wish to post a message on
+    PerlMonks ("http://perlmonks.org/?node=Seekers%20of%20Perl%20Wisdom")
+    or on the comp.lang.perl.misc newsgroup
+    ("http://groups.google.com/group/comp.lang.perl.misc/topics").
 
 AUTHOR
-    Developed by Matthew Simon Cavalletto at Evolution Softworks. You may
-    contact the author directly at "evo@cpan.org" or
-    "simonm@cavalletto.org".
+    Developed by Matthew Simon Cavalletto.  You may contact the author
+    directly at "evo@cpan.org" or "simonm@cavalletto.org".
 
-    Custom development and technical consulting are available at
-    "www.evolutionsoftworks.com". More free Perl software is available at
-    "www.evoscript.org".
+    Inspired by a discussion with Jim Keenan in the Perl Monks community.
 
-    Inspired by a discussion with Jim Keenan in the Perl Monks community. My
-    thanks also to other members of the community for feedback on this
-    module, in particular to graff, tachyon, Aristotle, and pbeckingham.
+    My thanks also to other members of the Perl Monks community for
+    feedback on this module, including graff, tachyon, Aristotle,
+    pbeckingham, and others. http://perlmonks.org/?node_id=388481
 
 LICENSE
-    Copyright 2004 Matthew Simon Cavalletto.
+    Copyright 2010, 2004 Matthew Simon Cavalletto.
 
     You may use, modify, and distribute this software under the same terms
     as Perl.
 
+    See http://dev.perl.org/licenses/ for more information.
