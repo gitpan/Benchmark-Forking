@@ -36,14 +36,6 @@ MOTIVATION
 VERSION
     This is version 1.00 of Benchmark::Forking.
 
-    Changes
-
-    2010−02−01: Updated documentation.
-
-    2004−09−05: Expanded documentation and packaged for distribution.
-
-    2004−09−03: First version written.
-
 INSTALLATION
     This module should work with any version of Perl 5, without platform
     dependencies or additional modules beyond the core distribution.

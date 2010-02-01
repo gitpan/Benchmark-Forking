@@ -1,6 +1,6 @@
 package Benchmark::Forking;
 
-$VERSION = "1.00";
+$VERSION = 1.01;
 
 use Benchmark;
 require Exporter;
@@ -218,15 +218,20 @@ For documentation of the timing functions, see L<Benchmark>.
 
 =head1 VERSION
 
-This is version 1.00 of Benchmark::Forking.
+This is version 1.01 of Benchmark::Forking.
 
 =head2 Changes
 
-2010-02-01: Updated documentation.
-
-2004-09-05: Expanded documentation and packaged for distribution.
-
-2004-09-03: First version written.
+  2010-02-01: Released version 1.01 to CPAN.
+  2010-02-01: Adjusted META.yml to include license. 
+  
+  2010-02-01: Released version 1.00 to CPAN.
+  2010-02-01: Updated documentation, rebuilt meta.yml, merged in the ReadMe.pod.
+  
+  2004-09-05: Released version 0.99 to CPAN.
+  2004-09-05: Expanded documentation and packaged for distribution. 
+  
+  2004-09-03: First version written.
 
 
 =head1 INSTALLATION
@@ -254,13 +259,11 @@ Once installed, this module's documentation is available as a
 manual page via C<perldoc Benchmark::Forking> or on CPAN sites 
 such as C<http://search.cpan.org/dist/Benchmark-Forking>.
 
-If you have questions or feedback about this module, please feel free
-to contact the author at the below address. Although there is no formal
-support program, I do attempt to answer email promptly.
-
-Bug reports that contain a failing test case are greatly appreciated,
-and suggested patches will be promptly considered for inclusion in
-future releases.
+If you have questions or feedback about this module, please feel free to
+contact the author at the address shown below. Although there is no formal
+support program, I do attempt to answer email promptly.  Bug reports that
+contain a failing test case are greatly appreciated, and suggested patches
+will be promptly considered for inclusion in future releases.
 
 To report bugs via the CPAN web tracking system, go to
 C<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Benchmark-Forking> or send

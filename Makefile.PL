@@ -12,18 +12,21 @@ BEGIN {
 
 WriteMakefile(
     'NAME'		=> 'Benchmark::Forking',
+	AUTHOR            => 'Matthew Simon Cavalletto <simonm@cavalletto.org>',
+	ABSTRACT_FROM     => 'Forking.pm', 
     'VERSION_FROM'	=> 'Forking.pm', 
+    ( $ExtUtils::MakeMaker::VERSION >= 6.3002
+    	? ('LICENSE'=> 'perl')
+    	: ()
+	),
     'PREREQ_PM'		=> {}, 
-
-    ($] >= 5.005 ? (
-      ABSTRACT_FROM     => 'Forking.pm', 
-      AUTHOR            => 'Matthew Simon Cavalletto <simonm@cavalletto.org>',
-    ) : ()),
+    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
+    clean               => { FILES => 'String-Escape-*' },
 );
 
 ########################################################################
 
-sub MY::postamble { q{
+sub MY::postamble { <<'<<' }
 
 again: realclean FORCE
 	perl Makefile.PL; make pm_to_blib
@@ -37,4 +40,6 @@ cleanmanifest: realclean FORCE
 cover: FORCE
 	cover -delete; HARNESS_PERL_SWITCHES=-MDevel::Cover make test; cover
 
-}; }
+<<
+
+1;
